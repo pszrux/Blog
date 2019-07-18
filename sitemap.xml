@@ -17,13 +17,6 @@
   </url>
   
   <url>
-    <loc>https://blog.aoerz.com/post/write-a-script-to-control-video/</loc>
-    <lastmod>2019-03-29T20:27:41+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.aoerz.com/</loc>
     <lastmod>2019-04-13T19:08:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -37,28 +30,7 @@
   </url>
   
   <url>
-    <loc>https://blog.aoerz.com/post/</loc>
-    <lastmod>2019-03-29T20:27:41+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.aoerz.com/tags/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.aoerz.com/tags/javascript/</loc>
-    <lastmod>2019-03-29T20:27:41+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.aoerz.com/tags/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2019-03-29T20:27:41+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

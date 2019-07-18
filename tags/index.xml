@@ -10,23 +10,5 @@
 	<atom:link href="https://blog.aoerz.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>javascript</title>
-      <link>https://blog.aoerz.com/tags/javascript/</link>
-      <pubDate>Fri, 29 Mar 2019 20:27:41 +0000</pubDate>
-      
-      <guid>https://blog.aoerz.com/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>学习</title>
-      <link>https://blog.aoerz.com/tags/%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Fri, 29 Mar 2019 20:27:41 +0000</pubDate>
-      
-      <guid>https://blog.aoerz.com/tags/%E5%AD%A6%E4%B9%A0/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
