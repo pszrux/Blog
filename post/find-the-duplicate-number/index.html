@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Find the duplicate number - Aoerz | Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Aoerz" /><meta name="description" content="总结 Leetcode find-the-duplicate-number 的做法。 Problem Given an array nums containing n &#43; 1 integers where each integer is between 1 and n(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one. Example 1: 1 2 Input: [1,3,4,2,2] Output: 2 Example 2: 1 2 Input: [3,1,3,4,2] Output: 3 Note: You must not modify the array" /><meta name="keywords" content="Aoerz, Blog" />
+
+
+
+<meta name="google-site-verification" content="google00f2ec6405b01c5f.html" />
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.aoerz.com/post/find-the-duplicate-number/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Find the duplicate number" />
+<meta property="og:description" content="总结 Leetcode find-the-duplicate-number 的做法。 Problem Given an array nums containing n &#43; 1 integers where each integer is between 1 and n(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one. Example 1: 1 2 Input: [1,3,4,2,2] Output: 2 Example 2: 1 2 Input: [3,1,3,4,2] Output: 3 Note: You must not modify the array" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.aoerz.com/post/find-the-duplicate-number/" />
+<meta property="article:published_time" content="2019-07-30T15:08:22&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-30T15:08:22&#43;08:00"/>
+
+<meta itemprop="name" content="Find the duplicate number">
+<meta itemprop="description" content="总结 Leetcode find-the-duplicate-number 的做法。 Problem Given an array nums containing n &#43; 1 integers where each integer is between 1 and n(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one. Example 1: 1 2 Input: [1,3,4,2,2] Output: 2 Example 2: 1 2 Input: [3,1,3,4,2] Output: 3 Note: You must not modify the array">
+
+
+<meta itemprop="datePublished" content="2019-07-30T15:08:22&#43;08:00" />
+<meta itemprop="dateModified" content="2019-07-30T15:08:22&#43;08:00" />
+<meta itemprop="wordCount" content="681">
+
+
+
+<meta itemprop="keywords" content="Algorithm,Leetcode," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Find the duplicate number"/>
+<meta name="twitter:description" content="总结 Leetcode find-the-duplicate-number 的做法。 Problem Given an array nums containing n &#43; 1 integers where each integer is between 1 and n(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one. Example 1: 1 2 Input: [1,3,4,2,2] Output: 2 Example 2: 1 2 Input: [3,1,3,4,2] Output: 3 Note: You must not modify the array"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aoerz</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">Links</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aoerz</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">Links</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Find the duplicate number</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-30 </span>
+        
+          <span class="more-meta"> 681 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a>
+<ul>
+<li><a href="#solution-1-floyd-s-tortoise-and-hare-https-en-wikipedia-org-wiki-cycle-detection-floyd-s-tortoise-and-hare">Solution 1: <a href="https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare">Floyd&rsquo;s_Tortoise_and_Hare</a></a></li>
+<li><a href="#solution-2-binary-search">Solution 2:Binary search</a></li>
+<li><a href="#solution-3-sorting">Solution 3: Sorting</a></li>
+<li><a href="#solution-4-hashset">Solution 4: HashSet</a></li>
+</ul></li>
+<li><a href="#reference">Reference</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>总结 Leetcode <a href="https://leetcode.com/problems/find-the-duplicate-number/">find-the-duplicate-number</a> 的做法。</p>
+
+<h2 id="problem">Problem</h2>
+
+<p>Given an array <em>nums</em> containing <em>n</em> + 1 integers where each integer is between 1 and <em>n</em>(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one.</p>
+
+<p><strong>Example 1:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Input: [1,3,4,2,2]
+Output: 2</pre></td></tr></table>
+</div>
+</div>
+<p><strong>Example 2:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Input: [3,1,3,4,2]
+Output: 3</pre></td></tr></table>
+</div>
+</div>
+<p><strong>Note:</strong></p>
+
+<ol>
+<li>You <strong>must not</strong> modify the array (assume the array is read only).</li>
+<li>You must use only constant, **O(1) **extra space.</li>
+<li>Your runtime complexity should be <strong>less than <em>O</em>(*n*2)</strong>.</li>
+<li>There is <strong>only one duplicate number</strong> in the array, but it could be repeated more than once.</li>
+</ol>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="solution-1-floyd-s-tortoise-and-hare-https-en-wikipedia-org-wiki-cycle-detection-floyd-s-tortoise-and-hare">Solution 1: <a href="https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare">Floyd&rsquo;s_Tortoise_and_Hare</a></h3>
+
+<p>根据抽屉原理[^1] , $n+1$ 个数分布在 $ 1$~ $n$ 之间, 至少有一个数重复出现两次。</p>
+
+<p>将数组nums=[3,1,3,4,2]</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">index</th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">number</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">2</td>
+</tr>
+</tbody>
+</table>
+
+<p>抽象为链表: $0 -&gt;3-&gt;4-&gt;2-&gt;3$ , 所以在 3 处开始循环。</p>
+
+<p>利用 Floyd&rsquo;s Tortoise and Hare 算法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">findDuplicate</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">tortoise</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">0</span><span class="o">];</span>
+            <span class="kt">int</span> <span class="n">hare</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">nums</span><span class="o">[</span><span class="n">0</span><span class="o">]];</span>
+      <span class="c1">//Find the intersection.
+</span><span class="c1"></span>            <span class="k">while</span> <span class="o">(</span><span class="n">tortoise</span> <span class="o">!=</span> <span class="n">hare</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">tortoise</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">tortoise</span><span class="o">];</span>
+                <span class="n">hare</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">nums</span><span class="o">[</span><span class="n">hare</span><span class="o">]];</span>
+            <span class="o">}</span>
+      <span class="c1">//find the first element of circle.
+</span><span class="c1"></span>            <span class="n">tortoise</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+            <span class="k">while</span> <span class="o">(</span><span class="n">tortoise</span> <span class="o">!=</span> <span class="n">hare</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">hare</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">hare</span><span class="o">];</span>
+                <span class="n">tortoise</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">tortoise</span><span class="o">];</span>
+            <span class="o">}</span>
+            <span class="k">return</span> <span class="n">hare</span><span class="o">;</span>
+        <span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>证明：</p>
+
+<p><img src="https://raw.githubusercontent.com/Aoerz/pictures/master/2019/1.jpg" alt="pic1" /></p>
+
+<p>tortoise 与 hare相遇 $x<em>i==x</em>{2i}$ , $\lambda$ 等于循环的长度。</p>
+
+<p>此时:</p>
+
+<p>$$i=x+y+p\lambda$$</p>
+
+<p>$$2i=x+y+q\lambda$$</p>
+
+<p>$$2x+2y+2p\lambda=x+y+q\lambda$$</p>
+
+<p>$$x+y=(q-2p)\lambda$$</p>
+
+<p>找到相遇点（循环中的任一点）后，如何找循环开始的第一个点呢？</p>
+
+<p>假设 tortorise 和 hare 相遇后，将 tortoise 置 0，回到起点，hare 原地不动，两者每次均移动一个单位，下次相遇点即为循环开始的点，假设 tortoise 移动 $x$单位后到达循环起点，由 $$x+y=(q-2p)\lambda$$ 知，hare 移动 $x+y$ 个单位将回到原位置，如果少移动 $y$个单位即恰好到循环起点。</p>
+
+<p>练习一下?</p>
+
+<p><a href="https://leetcode.com/problems/linked-list-cycle-ii/">Leetcode_linked-list-cycle-ii</a></p>
+
+<h3 id="solution-2-binary-search">Solution 2:Binary search</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">findDuplicate</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">low</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">high</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">low</span> <span class="o">&lt;</span> <span class="n">high</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="o">(</span><span class="n">high</span> <span class="o">-</span> <span class="n">low</span><span class="o">)</span> <span class="o">/</span> <span class="n">2</span><span class="o">;</span><span class="c1">// avoid overflow
+</span><span class="c1"></span>            <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">:</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">cnt</span><span class="o">++;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">cnt</span> <span class="o">&lt;=</span> <span class="n">mid</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">low</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>此外还有两种解法但不满足题目要求。</p>
+
+<h3 id="solution-3-sorting">Solution 3: Sorting</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">findDuplicate</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+ 			  <span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">nums</span><span class="o">);</span>
+              <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">1</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">++){</span>
+                  <span class="k">if</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="n">1</span><span class="o">]==</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]){</span>
+                      <span class="k">return</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="n">1</span><span class="o">];</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+           <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+        <span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>修改了数组，不符合要求一。</p>
+
+<h3 id="solution-4-hashset">Solution 4: HashSet</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>   
+<span class="kd">public</span> <span class="kt">int</span> <span class="nf">findDuplicate</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">set</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]))</span>
+                <span class="k">return</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+            <span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>空间复杂度为 $O(n)$.</p>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+<li><a href="https://stackoverflow.com/a/6110767/8449612">https://stackoverflow.com/a/6110767/8449612</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare">Cycle_detection</a></li>
+</ul>
+
+<hr />
+
+<ul>
+<li>[^1]:<a href="https://en.wikipedia.org/wiki/Pigeonhole_principle">https://en.wikipedia.org/wiki/Pigeonhole_principle</a>
+
+<br /></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content"><a href="https://aoerz.com" class="theme-link">Aoerz</a></span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-07-30
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/algorithm/">Algorithm</a>
+          <a href="/tags/leetcode/">Leetcode</a>
+          </div>
+      <nav class="post-nav">
+        
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2019-07-30 15:08:22 \x2b0800 CST',
+        title: 'Find the duplicate number',
+        clientID: 'f3f07b861974f7346797',
+        clientSecret: 'a5ddf0e5c4b6fbb3e8889c9e83ddb1267862d823',
+        repo: 'Blog',
+        owner: 'Aoerz',
+        admin: ['Aoerz'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:aoerz@outlook.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/8449612/aoerz" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://github.com/aoerz" class="iconfont icon-github" title="github"></a>
+  <a href="https://blog.aoerz.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href="https://aoerz.com" class="theme-link">Aoerz</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-138297683-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

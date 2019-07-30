@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.aoerz.com/post/find-the-duplicate-number/</loc>
+    <lastmod>2019-07-30T15:08:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.aoerz.com/links/</loc>
     <lastmod>2019-04-13T19:08:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -17,8 +24,15 @@
   </url>
   
   <url>
+    <loc>https://blog.aoerz.com/tags/algorithm/</loc>
+    <lastmod>2019-07-30T15:08:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.aoerz.com/</loc>
-    <lastmod>2019-04-13T19:08:01+08:00</lastmod>
+    <lastmod>2019-07-30T15:08:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -30,7 +44,22 @@
   </url>
   
   <url>
+    <loc>https://blog.aoerz.com/tags/leetcode/</loc>
+    <lastmod>2019-07-30T15:08:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.aoerz.com/post/</loc>
+    <lastmod>2019-07-30T15:08:22+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.aoerz.com/tags/</loc>
+    <lastmod>2019-07-30T15:08:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
