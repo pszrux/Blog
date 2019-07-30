@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-07-30T15:08:22&#43;08:00" />
 <meta itemprop="dateModified" content="2019-07-30T15:08:22&#43;08:00" />
-<meta itemprop="wordCount" content="681">
+<meta itemprop="wordCount" content="702">
 
 
 
@@ -130,7 +130,7 @@
       <div class="post-meta">
         <span class="post-time"> 2019-07-30 </span>
         
-          <span class="more-meta"> 681 words </span>
+          <span class="more-meta"> 702 words </span>
           <span class="more-meta"> 2 mins read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -192,7 +192,7 @@ Output: 3</pre></td></tr></table>
 
 <ol>
 <li>You <strong>must not</strong> modify the array (assume the array is read only).</li>
-<li>You must use only constant, **O(1) **extra space.</li>
+<li>You must use only constant, <strong>O(1)</strong>extra space.</li>
 <li>Your runtime complexity should be <strong>less than <em>O</em>(*n*2)</strong>.</li>
 <li>There is <strong>only one duplicate number</strong> in the array, but it could be repeated more than once.</li>
 </ol>
@@ -201,7 +201,7 @@ Output: 3</pre></td></tr></table>
 
 <h3 id="solution-1-floyd-s-tortoise-and-hare-https-en-wikipedia-org-wiki-cycle-detection-floyd-s-tortoise-and-hare">Solution 1: <a href="https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare">Floyd&rsquo;s_Tortoise_and_Hare</a></h3>
 
-<p>根据抽屉原理[^1] , $n+1$ 个数分布在 $ 1$~ $n$ 之间, 至少有一个数重复出现两次。</p>
+<p>根据抽屉原理[^1] , $ n+1 $ 个数分布在 $ 1 $~ $ n $ 之间, 至少有一个数重复出现两次。</p>
 
 <p>将数组nums=[3,1,3,4,2]</p>
 
@@ -229,7 +229,7 @@ Output: 3</pre></td></tr></table>
 </tbody>
 </table>
 
-<p>抽象为链表: $0 -&gt;3-&gt;4-&gt;2-&gt;3$ , 所以在 3 处开始循环。</p>
+<p>抽象为链表: $ 0 -&gt;3-&gt;4-&gt;2-&gt;3 $ , 所以在 3 处开始循环。</p>
 
 <p>利用 Floyd&rsquo;s Tortoise and Hare 算法：</p>
 <div class="highlight"><div class="chroma">
@@ -278,21 +278,21 @@ Output: 3</pre></td></tr></table>
 
 <p><img src="https://raw.githubusercontent.com/Aoerz/pictures/master/2019/1.jpg" alt="pic1" /></p>
 
-<p>tortoise 与 hare相遇 $x<em>i==x</em>{2i}$ , $\lambda$ 等于循环的长度。</p>
+<p>tortoise 与 hare相遇 $ x<em>i==x</em>{2i} $ , $ \lambda $ 等于循环的长度。</p>
 
 <p>此时:</p>
 
-<p>$$i=x+y+p\lambda$$</p>
+<p>$$ i=x+y+p\lambda $$</p>
 
 <p>$$2i=x+y+q\lambda$$</p>
 
-<p>$$2x+2y+2p\lambda=x+y+q\lambda$$</p>
+<p>$$ 2x+2y+2p\lambda=x+y+q\lambda $$</p>
 
-<p>$$x+y=(q-2p)\lambda$$</p>
+<p>$$ x+y=(q-2p)\lambda $$</p>
 
 <p>找到相遇点（循环中的任一点）后，如何找循环开始的第一个点呢？</p>
 
-<p>假设 tortorise 和 hare 相遇后，将 tortoise 置 0，回到起点，hare 原地不动，两者每次均移动一个单位，下次相遇点即为循环开始的点，假设 tortoise 移动 $x$单位后到达循环起点，由 $$x+y=(q-2p)\lambda$$ 知，hare 移动 $x+y$ 个单位将回到原位置，如果少移动 $y$个单位即恰好到循环起点。</p>
+<p>假设 tortorise 和 hare 相遇后，将 tortoise 置 0，回到起点，hare 原地不动，两者每次均移动一个单位，下次相遇点即为循环开始的点，假设 tortoise 移动 $ x $单位后到达循环起点，由 $$ x+y=(q-2p)\lambda $$ 知，hare 移动 $ x+y $ 个单位将回到原位置，如果少移动 $ y $个单位即恰好到循环起点。</p>
 
 <p>练习一下?</p>
 
@@ -416,6 +416,7 @@ Output: 3</pre></td></tr></table>
 <ul>
 <li><a href="https://stackoverflow.com/a/6110767/8449612">https://stackoverflow.com/a/6110767/8449612</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare">Cycle_detection</a></li>
+<li><a href="http://www.keithschwarz.com/interesting/code/?dir=find-duplicate">http://www.keithschwarz.com/interesting/code/?dir=find-duplicate</a></li>
 </ul>
 
 <hr />
