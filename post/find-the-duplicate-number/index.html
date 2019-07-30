@@ -16,7 +16,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Aoerz" /><meta name="description" content="总结 Leetcode find-the-duplicate-number 的做法。 Problem Given an array nums containing n &#43; 1 integers where each integer is between 1 and n(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one. Example 1: 1 2 Input: [1,3,4,2,2] Output: 2 Example 2: 1 2 Input: [3,1,3,4,2] Output: 3 Note: You must not modify the array" /><meta name="keywords" content="Aoerz, Blog" />
+<meta name="author" content="Aoerz" /><meta name="description" content="总结 Leetcode find-the-duplicate-number 的做法。
+Problem Given an array nums containing n &#43; 1 integers where each integer is between 1 and n(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one.
+" /><meta name="keywords" content="Aoerz, Blog" />
 
 
 
@@ -39,14 +41,22 @@
 
 
 <meta property="og:title" content="Find the duplicate number" />
-<meta property="og:description" content="总结 Leetcode find-the-duplicate-number 的做法。 Problem Given an array nums containing n &#43; 1 integers where each integer is between 1 and n(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one. Example 1: 1 2 Input: [1,3,4,2,2] Output: 2 Example 2: 1 2 Input: [3,1,3,4,2] Output: 3 Note: You must not modify the array" />
+<meta property="og:description" content="总结 Leetcode find-the-duplicate-number 的做法。
+
+Problem
+
+Given an array nums containing n &#43; 1 integers where each integer is between 1 and n(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.aoerz.com/post/find-the-duplicate-number/" />
 <meta property="article:published_time" content="2019-07-30T15:08:22&#43;08:00"/>
 <meta property="article:modified_time" content="2019-07-30T15:08:22&#43;08:00"/>
 
 <meta itemprop="name" content="Find the duplicate number">
-<meta itemprop="description" content="总结 Leetcode find-the-duplicate-number 的做法。 Problem Given an array nums containing n &#43; 1 integers where each integer is between 1 and n(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one. Example 1: 1 2 Input: [1,3,4,2,2] Output: 2 Example 2: 1 2 Input: [3,1,3,4,2] Output: 3 Note: You must not modify the array">
+<meta itemprop="description" content="总结 Leetcode find-the-duplicate-number 的做法。
+
+Problem
+
+Given an array nums containing n &#43; 1 integers where each integer is between 1 and n(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one.">
 
 
 <meta itemprop="datePublished" content="2019-07-30T15:08:22&#43;08:00" />
@@ -58,7 +68,11 @@
 <meta itemprop="keywords" content="Algorithm,Leetcode," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Find the duplicate number"/>
-<meta name="twitter:description" content="总结 Leetcode find-the-duplicate-number 的做法。 Problem Given an array nums containing n &#43; 1 integers where each integer is between 1 and n(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one. Example 1: 1 2 Input: [1,3,4,2,2] Output: 2 Example 2: 1 2 Input: [3,1,3,4,2] Output: 3 Note: You must not modify the array"/>
+<meta name="twitter:description" content="总结 Leetcode find-the-duplicate-number 的做法。
+
+Problem
+
+Given an array nums containing n &#43; 1 integers where each integer is between 1 and n(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -158,9 +172,7 @@
   </div>
 </div>
     <div class="post-content">
-      
-
-<p>总结 Leetcode <a href="https://leetcode.com/problems/find-the-duplicate-number/">find-the-duplicate-number</a> 的做法。</p>
+      <p>总结 Leetcode <a href="https://leetcode.com/problems/find-the-duplicate-number/">find-the-duplicate-number</a> 的做法。</p>
 
 <h2 id="problem">Problem</h2>
 
@@ -193,7 +205,7 @@ Output: 3</pre></td></tr></table>
 <ol>
 <li>You <strong>must not</strong> modify the array (assume the array is read only).</li>
 <li>You must use only constant, <strong>O(1)</strong>extra space.</li>
-<li>Your runtime complexity should be <strong>less than <em>O</em>(*n*2)</strong>.</li>
+<li>Your runtime complexity should be <strong>less than <em>O</em>($n^2$)</strong>.</li>
 <li>There is <strong>only one duplicate number</strong> in the array, but it could be repeated more than once.</li>
 </ol>
 
@@ -201,7 +213,7 @@ Output: 3</pre></td></tr></table>
 
 <h3 id="solution-1-floyd-s-tortoise-and-hare-https-en-wikipedia-org-wiki-cycle-detection-floyd-s-tortoise-and-hare">Solution 1: <a href="https://en.wikipedia.org/wiki/Cycle_detection#Floyd's_Tortoise_and_Hare">Floyd&rsquo;s_Tortoise_and_Hare</a></h3>
 
-<p>根据抽屉原理[^1] , $ n+1 $ 个数分布在 $ 1 $~ $ n $ 之间, 至少有一个数重复出现两次。</p>
+<p>根据抽屉原理[^1]  , $ n+1 $ 个数分布在 $ 1 $~ $ n $ 之间, 至少有一个数重复出现两次。</p>
 
 <p>将数组nums=[3,1,3,4,2]</p>
 
@@ -278,7 +290,9 @@ Output: 3</pre></td></tr></table>
 
 <p><img src="https://raw.githubusercontent.com/Aoerz/pictures/master/2019/1.jpg" alt="pic1" /></p>
 
-<p>tortoise 与 hare相遇 $ x<em>i==x</em>{2i} $ , $ \lambda $ 等于循环的长度。</p>
+<p>tortoise 与 hare相遇 $x <em>i== x</em>{2i} $ ,</p>
+
+<p>$\lambda $ 等于循环的长度。</p>
 
 <p>此时:</p>
 
@@ -292,7 +306,7 @@ Output: 3</pre></td></tr></table>
 
 <p>找到相遇点（循环中的任一点）后，如何找循环开始的第一个点呢？</p>
 
-<p>假设 tortorise 和 hare 相遇后，将 tortoise 置 0，回到起点，hare 原地不动，两者每次均移动一个单位，下次相遇点即为循环开始的点，假设 tortoise 移动 $ x $单位后到达循环起点，由 $$ x+y=(q-2p)\lambda $$ 知，hare 移动 $ x+y $ 个单位将回到原位置，如果少移动 $ y $个单位即恰好到循环起点。</p>
+<p>假设 tortorise 和 hare 相遇后，将 tortoise 置 0，回到起点，hare 原地不动，两者每次均移动一个单位，下次相遇点即为循环开始的点，假设 tortoise 移动 $ x $ 单位后到达循环起点，由 $$ x+y=(q-2p)\lambda $$ 知：hare 移动 $ x+y $ 个单位将回到原位置，如果少移动 $ y $ 个单位即恰好到循环起点。</p>
 
 <p>练习一下?</p>
 
@@ -426,7 +440,6 @@ Output: 3</pre></td></tr></table>
 
 <br /></li>
 </ul>
-
     </div>
 
     <div class="post-copyright">
@@ -536,7 +549,7 @@ Output: 3</pre></td></tr></table>
       messageStyle: 'none'
     };
   </script>
-  <script type="text/javascript" async src="/lib/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 
 
 <script type="application/javascript">
