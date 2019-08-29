@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title> - Aoerz | Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Aoerz" /><meta name="description" content="看了这篇博客知道Fibonacci 有$O(logn)$ 的解法，所以来总结下计算 Nth Fibonacci 的算法。
+1.递归 1 2 3 4 5 6 7  int fib(int N) { if (N == 0 || N == 1) { return N; } else { return fib(N - 1) &#43; fib(N - 2); } }   递归算法不推荐，因为时间复杂度为指数级。
+可以采用记忆化Memoization 降低复杂度。
+2.迭代 1 2 3 4 5 6 7 8 9 10 11 12  int fib(int N) { if (N == 0 || N == 1) { return N; } int f1 = 0, f2 = 1, f = 0; for (int i = 2; i &amp;lt;= N; i&#43;&#43;) { f = f1 &#43; f2; f1 = f2; f2 = f; } return f; }   时间复杂度：$O(n)$" /><meta name="keywords" content="Aoerz, Blog" />
+
+
+
+<meta name="google-site-verification" content="google00f2ec6405b01c5f.html" />
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.aoerz.com/post/fibonacci_number/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="看了这篇博客知道Fibonacci 有$O(logn)$ 的解法，所以来总结下计算 Nth Fibonacci 的算法。
+1.递归 1 2 3 4 5 6 7  int fib(int N) { if (N == 0 || N == 1) { return N; } else { return fib(N - 1) &#43; fib(N - 2); } }   递归算法不推荐，因为时间复杂度为指数级。
+可以采用记忆化Memoization 降低复杂度。
+2.迭代 1 2 3 4 5 6 7 8 9 10 11 12  int fib(int N) { if (N == 0 || N == 1) { return N; } int f1 = 0, f2 = 1, f = 0; for (int i = 2; i &lt;= N; i&#43;&#43;) { f = f1 &#43; f2; f1 = f2; f2 = f; } return f; }   时间复杂度：$O(n)$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.aoerz.com/post/fibonacci_number/" />
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="看了这篇博客知道Fibonacci 有$O(logn)$ 的解法，所以来总结下计算 Nth Fibonacci 的算法。
+1.递归 1 2 3 4 5 6 7  int fib(int N) { if (N == 0 || N == 1) { return N; } else { return fib(N - 1) &#43; fib(N - 2); } }   递归算法不推荐，因为时间复杂度为指数级。
+可以采用记忆化Memoization 降低复杂度。
+2.迭代 1 2 3 4 5 6 7 8 9 10 11 12  int fib(int N) { if (N == 0 || N == 1) { return N; } int f1 = 0, f2 = 1, f = 0; for (int i = 2; i &lt;= N; i&#43;&#43;) { f = f1 &#43; f2; f1 = f2; f2 = f; } return f; }   时间复杂度：$O(n)$">
+
+
+
+<meta itemprop="wordCount" content="390">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="看了这篇博客知道Fibonacci 有$O(logn)$ 的解法，所以来总结下计算 Nth Fibonacci 的算法。
+1.递归 1 2 3 4 5 6 7  int fib(int N) { if (N == 0 || N == 1) { return N; } else { return fib(N - 1) &#43; fib(N - 2); } }   递归算法不推荐，因为时间复杂度为指数级。
+可以采用记忆化Memoization 降低复杂度。
+2.迭代 1 2 3 4 5 6 7 8 9 10 11 12  int fib(int N) { if (N == 0 || N == 1) { return N; } int f1 = 0, f2 = 1, f = 0; for (int i = 2; i &lt;= N; i&#43;&#43;) { f = f1 &#43; f2; f1 = f2; f2 = f; } return f; }   时间复杂度：$O(n)$"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aoerz | Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">Links</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aoerz | Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">Links</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title"></h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 0001-01-01 </span>
+        
+          <span class="more-meta"> 390 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-递归">1.递归</a></li>
+<li><a href="#2-迭代">2.迭代</a></li>
+<li><a href="#3-矩阵快速幂">3.矩阵快速幂</a></li>
+<li><a href="#4-快速倍增法-fast-doubling">4.快速倍增法(<strong>Fast doubling</strong>)</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>看了这篇<a href="https://www.nayuki.io/page/fast-fibonacci-algorithms">博客</a>知道Fibonacci 有$O(logn)$ 的解法，所以来总结下计算 Nth Fibonacci 的算法。</p>
+
+<h3 id="1-递归">1.递归</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">     <span class="kt">int</span> <span class="nf">fib</span><span class="o">(</span><span class="kt">int</span> <span class="n">N</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">N</span> <span class="o">==</span> <span class="n">0</span> <span class="o">||</span> <span class="n">N</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">N</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">fib</span><span class="o">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">1</span><span class="o">)</span> <span class="o">+</span> <span class="n">fib</span><span class="o">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">2</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>递归算法不推荐，因为时间复杂度为<strong>指数级</strong>。</p>
+
+<p>可以采用记忆化<a href="https://en.wikipedia.org/wiki/Memoization">Memoization</a> 降低复杂度。</p>
+
+<h3 id="2-迭代">2.迭代</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">      <span class="kt">int</span> <span class="nf">fib</span><span class="o">(</span><span class="kt">int</span> <span class="n">N</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">N</span> <span class="o">==</span> <span class="n">0</span> <span class="o">||</span> <span class="n">N</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">N</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="kt">int</span> <span class="n">f1</span> <span class="o">=</span> <span class="n">0</span><span class="o">,</span> <span class="n">f2</span> <span class="o">=</span> <span class="n">1</span><span class="o">,</span> <span class="n">f</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">f1</span> <span class="o">+</span> <span class="n">f2</span><span class="o">;</span>
+            <span class="n">f1</span> <span class="o">=</span> <span class="n">f2</span><span class="o">;</span>
+            <span class="n">f2</span> <span class="o">=</span> <span class="n">f</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">f</span><span class="o">;</span>
+    <span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>时间复杂度：$O(n)$</p>
+
+<p>空间复杂度：$O(1)$</p>
+
+<h3 id="3-矩阵快速幂">3.矩阵快速幂</h3>
+
+<p>快速幂：计算$a^n$</p>
+
+<p>$a^9=a^{(1001)_2}=a^8*a^1$</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">ExponentiationBySquaring</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">){</span>
+            <span class="n">res</span> <span class="o">*=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">a</span> <span class="o">*=</span> <span class="n">a</span><span class="p">;</span>
+        <span class="n">n</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">//</span><span class="n">C语言</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>矩阵快速幂类似：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"> int matrix_quick_exp(int[][] a, int n) {
+        int[][] ans = {{1, 0}, {0, 1}};//单位矩阵
+        while (n != 0) {
+            if (n % 2 == 1) {
+                ans = matrix_mul(ans, a);//矩阵乘法
+            }
+            a = matrix_mul(a, a);
+            n &gt;&gt;&gt;= 1;
+        }
+        return ans[0][0];
+    }</pre></td></tr></table>
+</div>
+</div>
+<p>计算Nth-Fibonacci number 的完整Java 算法:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"> <span class="kd">static</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">matrix_mul</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">tmp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">2</span><span class="o">];</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">2</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">2</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="n">tmp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">2</span><span class="o">;</span> <span class="n">k</span><span class="o">++)</span> <span class="o">{</span>
+                    <span class="n">tmp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">k</span><span class="o">]</span> <span class="o">*</span> <span class="n">b</span><span class="o">[</span><span class="n">k</span><span class="o">][</span><span class="n">j</span><span class="o">];</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">tmp</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kt">int</span> <span class="nf">matrix_quick_exp</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">ans</span> <span class="o">=</span> <span class="o">{{</span><span class="n">1</span><span class="o">,</span> <span class="n">0</span><span class="o">},</span> <span class="o">{</span><span class="n">0</span><span class="o">,</span> <span class="n">1</span><span class="o">}};</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">n</span> <span class="o">!=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">2</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">ans</span> <span class="o">=</span> <span class="n">matrix_mul</span><span class="o">(</span><span class="n">ans</span><span class="o">,</span> <span class="n">a</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">matrix_mul</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">a</span><span class="o">);</span>
+            <span class="n">n</span> <span class="o">&gt;&gt;&gt;=</span> <span class="n">1</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">];</span>
+    <span class="o">}</span>
+
+    <span class="kt">int</span> <span class="nf">fib</span><span class="o">(</span><span class="kt">int</span> <span class="n">N</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">N</span> <span class="o">&lt;=</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">N</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">a</span> <span class="o">=</span> <span class="o">{{</span><span class="n">1</span><span class="o">,</span> <span class="n">1</span><span class="o">},</span> <span class="o">{</span><span class="n">1</span><span class="o">,</span> <span class="n">0</span><span class="o">}};</span>
+        <span class="k">return</span> <span class="n">matrix_quick_exp</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">N</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+    <span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="4-快速倍增法-fast-doubling">4.快速倍增法(<strong>Fast doubling</strong>)</h3>
+
+<p>由$ \begin{bmatrix} 1 &amp; 1 \ 1 &amp; 0 \end{bmatrix}^n = \begin{bmatrix} F(n+1) &amp; F(n) \ F(n) &amp; F(n-1) \end{bmatrix}$</p>
+
+<p>可推出快速倍增法，具体见 <a href="https://math.stackexchange.com/questions/1124590/need-help-understanding-fibonacci-fast-doubling-proof">mathStackExchange</a>.</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content"><a href="https://blog.aoerz.com" class="theme-link">Aoerz</a></span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        0001-01-01
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/find-the-duplicate-number/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Find the duplicate number</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/float-issues/">
+            <span class="next-text nav-default"></span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '0001-01-01 00:00:00 \x2b0000 UTC',
+        title: '',
+        clientID: 'f3f07b861974f7346797',
+        clientSecret: 'a5ddf0e5c4b6fbb3e8889c9e83ddb1267862d823',
+        repo: 'Blog',
+        owner: 'Aoerz',
+        admin: ['Aoerz'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:aoerz@outlook.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/8449612/aoerz" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://github.com/aoerz" class="iconfont icon-github" title="github"></a>
+  <a href="https://blog.aoerz.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href="https://blog.aoerz.com" class="theme-link">Aoerz</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-138297683-2', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Aoerz | Blog</title>
+  <title> - Aoerz | Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Aoerz" /><meta name="description" content="Aoerz&#39;s blog" /><meta name="keywords" content="Aoerz, Blog" />
+<meta name="author" content="Aoerz" /><meta name="description" content="" /><meta name="keywords" content="Aoerz, Blog" />
 
 
 
@@ -26,9 +26,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="https://blog.aoerz.com/" />
-  <link href="https://blog.aoerz.com/index.xml" rel="alternate" type="application/rss+xml" title="Aoerz | Blog" />
-  <link href="https://blog.aoerz.com/index.xml" rel="feed" type="application/rss+xml" title="Aoerz | Blog" />
+<link rel="canonical" href="https://blog.aoerz.com/post/float-issues/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,19 +38,25 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Aoerz | Blog" />
-<meta property="og:description" content="Aoerz&#39;s blog" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.aoerz.com/" />
+<meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.aoerz.com/post/float-issues/" />
 
-<meta property="og:updated_time" content="2019-07-30T15:08:22&#43;08:00"/>
 
-<meta itemprop="name" content="Aoerz | Blog">
-<meta itemprop="description" content="Aoerz&#39;s blog">
+<meta itemprop="name" content="">
+<meta itemprop="description" content="">
 
+
+
+<meta itemprop="wordCount" content="0">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Aoerz | Blog"/>
-<meta name="twitter:description" content="Aoerz&#39;s blog"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -116,85 +120,82 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="posts" class="posts">
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/find-the-duplicate-number/">Find the duplicate number</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-07-30 </span>
-      
-        <span class="more-meta"> 874 words </span>
-        <span class="more-meta"> 2 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>总结 Leetcode <a href="https://leetcode.com/problems/find-the-duplicate-number/">find-the-duplicate-number</a> 的做法。</p>
-
-<h2 id="problem">Problem</h2>
-
-<p>Given an array <em>nums</em> containing <em>n</em> + 1 integers where each integer is between 1 and <em>n</em>(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/find-the-duplicate-number/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/fibonacci_number/"></a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 0001-01-01 </span>
-      
-        <span class="more-meta"> 390 words </span>
-        <span class="more-meta"> 2 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      看了这篇博客知道Fibonacci 有$O(logn)$ 的解法，所以来总结下计算 Nth Fibonacci 的算法。
-1.递归 1 2 3 4 5 6 7  int fib(int N) { if (N == 0 || N == 1) { return N; } else { return fib(N - 1) + fib(N - 2); } }   递归算法不推荐，因为时间复杂度为指数级。
-可以采用记忆化Memoization 降低复杂度。
-2.迭代 1 2 3 4 5 6 7 8 9 10 11 12  int fib(int N) { if (N == 0 || N == 1) { return N; } int f1 = 0, f2 = 1, f = 0; for (int i = 2; i &lt;= N; i++) { f = f1 + f2; f1 = f2; f2 = f; } return f; }   时间复杂度：$O(n)$
-    </div>
-    <div class="read-more">
-      <a href="/post/fibonacci_number/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/float-issues/"></a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 0001-01-01 </span>
-      
-        <span class="more-meta"> 0 words </span>
-        <span class="more-meta"> 0 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      
-    </div>
-    <div class="read-more">
-      <a href="/post/float-issues/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    </section>
-  
-  <nav class="pagination">
+          <article class="post">
     
-    
-  </nav>
-        </div>
+    <header class="post-header">
+      <h1 class="post-title"></h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 0001-01-01 </span>
         
+          <span class="more-meta"> 0 words </span>
+          <span class="more-meta"> 0 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content"><a href="https://blog.aoerz.com" class="theme-link">Aoerz</a></span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        0001-01-01
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/fibonacci_number/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default"></span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '0001-01-01 00:00:00 \x2b0000 UTC',
+        title: '',
+        clientID: 'f3f07b861974f7346797',
+        clientSecret: 'a5ddf0e5c4b6fbb3e8889c9e83ddb1267862d823',
+        repo: 'Blog',
+        owner: 'Aoerz',
+        admin: ['Aoerz'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+  
+  
+
+  
 
       </div>
     </main>
