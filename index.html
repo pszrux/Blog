@@ -142,51 +142,6 @@
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/fibonacci_number/"></a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 0001-01-01 </span>
-      
-        <span class="more-meta"> 390 words </span>
-        <span class="more-meta"> 2 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      看了这篇博客知道Fibonacci 有$O(logn)$ 的解法，所以来总结下计算 Nth Fibonacci 的算法。
-1.递归 1 2 3 4 5 6 7  int fib(int N) { if (N == 0 || N == 1) { return N; } else { return fib(N - 1) + fib(N - 2); } }   递归算法不推荐，因为时间复杂度为指数级。
-可以采用记忆化Memoization 降低复杂度。
-2.迭代 1 2 3 4 5 6 7 8 9 10 11 12  int fib(int N) { if (N == 0 || N == 1) { return N; } int f1 = 0, f2 = 1, f = 0; for (int i = 2; i &lt;= N; i++) { f = f1 + f2; f1 = f2; f2 = f; } return f; }   时间复杂度：$O(n)$
-    </div>
-    <div class="read-more">
-      <a href="/post/fibonacci_number/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/float-issues/"></a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 0001-01-01 </span>
-      
-        <span class="more-meta"> 0 words </span>
-        <span class="more-meta"> 0 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      
-    </div>
-    <div class="read-more">
-      <a href="/post/float-issues/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">

@@ -24,18 +24,6 @@
   </url>
   
   <url>
-    <loc>https://blog.aoerz.com/post/fibonacci_number/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.aoerz.com/post/float-issues/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.aoerz.com/tags/algorithm/</loc>
     <lastmod>2019-07-30T15:08:22+08:00</lastmod>
     <changefreq>weekly</changefreq>

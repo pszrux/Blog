@@ -42,26 +42,5 @@
       <description>NULL.</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://blog.aoerz.com/post/fibonacci_number/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.aoerz.com/post/fibonacci_number/</guid>
-      <description>看了这篇博客知道Fibonacci 有$O(logn)$ 的解法，所以来总结下计算 Nth Fibonacci 的算法。
-1.递归 1 2 3 4 5 6 7  int fib(int N) { if (N == 0 || N == 1) { return N; } else { return fib(N - 1) + fib(N - 2); } }   递归算法不推荐，因为时间复杂度为指数级。
-可以采用记忆化Memoization 降低复杂度。
-2.迭代 1 2 3 4 5 6 7 8 9 10 11 12  int fib(int N) { if (N == 0 || N == 1) { return N; } int f1 = 0, f2 = 1, f = 0; for (int i = 2; i &amp;lt;= N; i++) { f = f1 + f2; f1 = f2; f2 = f; } return f; }   时间复杂度：$O(n)$</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://blog.aoerz.com/post/float-issues/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.aoerz.com/post/float-issues/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
