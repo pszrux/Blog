@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.aoerz.com/post/sql-server-attach-error/</loc>
+    <lastmod>2019-09-26T17:36:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.aoerz.com/post/find-the-duplicate-number/</loc>
     <lastmod>2019-07-30T15:08:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -32,7 +39,7 @@
   
   <url>
     <loc>https://blog.aoerz.com/</loc>
-    <lastmod>2019-07-30T15:08:22+08:00</lastmod>
+    <lastmod>2019-09-26T17:36:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -52,7 +59,7 @@
   
   <url>
     <loc>https://blog.aoerz.com/post/</loc>
-    <lastmod>2019-07-30T15:08:22+08:00</lastmod>
+    <lastmod>2019-09-26T17:36:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

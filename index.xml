@@ -6,10 +6,27 @@
     <description>Recent content on Aoerz | Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 30 Jul 2019 15:08:22 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Sep 2019 17:36:32 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.aoerz.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sql Server Attach Error</title>
+      <link>https://blog.aoerz.com/post/sql-server-attach-error/</link>
+      <pubDate>Thu, 26 Sep 2019 17:36:32 +0800</pubDate>
+      
+      <guid>https://blog.aoerz.com/post/sql-server-attach-error/</guid>
+      <description>&lt;h3 id=&#34;问题&#34;&gt;问题&lt;/h3&gt;
+
+&lt;p&gt;学校数据库上机用的sql server 2008, 自己电脑上安装的是sql server 2017, 然后老师给的 .mdf 文件在机房是可以附加的，在我的电脑上是附加不成功, 提示有错误：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;SQLServer 数据库、附加数据库时出错。有关详细信息，请单击“消息”列中的超链接&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;搜索了好久，好多博客讲的都是修改文件权限，然而在我这里依旧行不通，问题依然存在，另外吐槽一下: csdn 同样的&lt;a href=&#34;https://blog.csdn.net/qwdafedv/article/details/47036763&#34;&gt;文章&lt;/a&gt;会出现好多遍，好像csdn 上的coder 都喜欢copy, paste, copy, paste&amp;hellip;(由于涉及到上古时期的软件，去csdn 碰碰运气, 万一碰到解决方案呢, 然而并没有&amp;hellip;&amp;hellip;)&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Find the duplicate number</title>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Sql Server Attach Error - Aoerz | Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Aoerz" /><meta name="description" content="问题 学校数据库上机用的sql server 2008, 自己电脑上安装的是sql server 2017, 然后老师给的 .mdf 文件在机房是可以附加的，在我的电脑上是附加不成功, 提示有错误：
+ SQLServer 数据库、附加数据库时出错。有关详细信息，请单击“消息”列中的超链接
+ 搜索了好久，好多博客讲的都是修改文件权限，然而在我这里依旧行不通，问题依然存在，另外吐槽一下: csdn 同样的文章会出现好多遍，好像csdn 上的coder 都喜欢copy, paste, copy, paste&amp;hellip;(由于涉及到上古时期的软件，去csdn 碰碰运气, 万一碰到解决方案呢, 然而并没有&amp;hellip;&amp;hellip;)
+" /><meta name="keywords" content="Aoerz, Blog" />
+
+
+
+<meta name="google-site-verification" content="google00f2ec6405b01c5f.html" />
+
+
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://blog.aoerz.com/post/sql-server-attach-error/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Sql Server Attach Error" />
+<meta property="og:description" content="问题
+
+学校数据库上机用的sql server 2008, 自己电脑上安装的是sql server 2017, 然后老师给的 .mdf 文件在机房是可以附加的，在我的电脑上是附加不成功, 提示有错误：
+
+
+SQLServer 数据库、附加数据库时出错。有关详细信息，请单击“消息”列中的超链接
+
+
+搜索了好久，好多博客讲的都是修改文件权限，然而在我这里依旧行不通，问题依然存在，另外吐槽一下: csdn 同样的文章会出现好多遍，好像csdn 上的coder 都喜欢copy, paste, copy, paste&hellip;(由于涉及到上古时期的软件，去csdn 碰碰运气, 万一碰到解决方案呢, 然而并没有&hellip;&hellip;)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.aoerz.com/post/sql-server-attach-error/" />
+<meta property="article:published_time" content="2019-09-26T17:36:32&#43;08:00"/>
+<meta property="article:modified_time" content="2019-09-26T17:36:32&#43;08:00"/>
+
+<meta itemprop="name" content="Sql Server Attach Error">
+<meta itemprop="description" content="问题
+
+学校数据库上机用的sql server 2008, 自己电脑上安装的是sql server 2017, 然后老师给的 .mdf 文件在机房是可以附加的，在我的电脑上是附加不成功, 提示有错误：
+
+
+SQLServer 数据库、附加数据库时出错。有关详细信息，请单击“消息”列中的超链接
+
+
+搜索了好久，好多博客讲的都是修改文件权限，然而在我这里依旧行不通，问题依然存在，另外吐槽一下: csdn 同样的文章会出现好多遍，好像csdn 上的coder 都喜欢copy, paste, copy, paste&hellip;(由于涉及到上古时期的软件，去csdn 碰碰运气, 万一碰到解决方案呢, 然而并没有&hellip;&hellip;)">
+
+
+<meta itemprop="datePublished" content="2019-09-26T17:36:32&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-26T17:36:32&#43;08:00" />
+<meta itemprop="wordCount" content="1003">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sql Server Attach Error"/>
+<meta name="twitter:description" content="问题
+
+学校数据库上机用的sql server 2008, 自己电脑上安装的是sql server 2017, 然后老师给的 .mdf 文件在机房是可以附加的，在我的电脑上是附加不成功, 提示有错误：
+
+
+SQLServer 数据库、附加数据库时出错。有关详细信息，请单击“消息”列中的超链接
+
+
+搜索了好久，好多博客讲的都是修改文件权限，然而在我这里依旧行不通，问题依然存在，另外吐槽一下: csdn 同样的文章会出现好多遍，好像csdn 上的coder 都喜欢copy, paste, copy, paste&hellip;(由于涉及到上古时期的软件，去csdn 碰碰运气, 万一碰到解决方案呢, 然而并没有&hellip;&hellip;)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aoerz | Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">Links</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aoerz | Blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">Links</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Sql Server Attach Error</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-09-26 </span>
+        
+          <span class="more-meta"> 1003 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#问题">问题</a></li>
+<li><a href="#解决过程">解决过程</a></li>
+<li><a href="#还没完呢">还没完呢？</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h3 id="问题">问题</h3>
+
+<p>学校数据库上机用的sql server 2008, 自己电脑上安装的是sql server 2017, 然后老师给的 .mdf 文件在机房是可以附加的，在我的电脑上是附加不成功, 提示有错误：</p>
+
+<blockquote>
+<p>SQLServer 数据库、附加数据库时出错。有关详细信息，请单击“消息”列中的超链接</p>
+</blockquote>
+
+<p>搜索了好久，好多博客讲的都是修改文件权限，然而在我这里依旧行不通，问题依然存在，另外吐槽一下: csdn 同样的<a href="https://blog.csdn.net/qwdafedv/article/details/47036763">文章</a>会出现好多遍，好像csdn 上的coder 都喜欢copy, paste, copy, paste&hellip;(由于涉及到上古时期的软件，去csdn 碰碰运气, 万一碰到解决方案呢, 然而并没有&hellip;&hellip;)</p>
+
+<p>吐槽ending&hellip;.</p>
+
+<h3 id="解决过程">解决过程</h3>
+
+<p>说我的解决方案吧：</p>
+
+<p>老师给的test.mdf 文件的创建日期是2011年(祖传数据库🐶)，考虑到学校提供的工具集落后业界10+年，看sql server 的历史<a href="https://en.wikipedia.org/wiki/History_of_Microsoft_SQL_Server">wiki</a>，2011年时最新版本应该是2008，所以创建test.mdf 的sql erver 版本应该更低(maybe 2005 or 2000，谁具体知道呢？🐶)​​</p>
+
+<p>将MSSM Studio上的错误提示信息(SQLServer数据库、附加数据库时出错。有关详细信息，请单击“消息”列中的超链接)翻译成英语，然后Google了一番，<a href="https://blogs.technet.microsoft.com/mdegre/2012/06/15/migration-sql-server-2000-to-sql-server-2012/">这个答案映入眼帘</a></p>
+
+<blockquote>
+<p>You will be not able to migrate from SQL 2000 to 2012 directly. Migration from 2000 to 2012 requires an intermediate step.</p>
+</blockquote>
+
+<p>你不能从2008直接迁移到2012, 需要一个中间过程。接着看:</p>
+
+<blockquote>
+<p>You will have to make the migration in two steps:</p>
+
+<p><strong>- Step 1:</strong> Make a first migration from SQL 2000 to SQL 2008 for instance. You need to be SQL 2000 SP4, then follow this step : <a href="http://blogs.technet.com/b/mdegre/archive/2009/07/21/migration-sql-server-2000-to-sql-server-2008.aspx">Migration SQL Server 2000 to SQL Server 2008</a>
+<strong>- Step 2:</strong> Make a second migration from SQL Server 2008 to 2012.</p>
+</blockquote>
+
+<p>sql server 不能直接迁移，那么database可以直接迁移吗？Go on</p>
+
+<p>Google <code>attach sql server 2000 database to sql server 2012</code>，第一个<a href="https://social.msdn.microsoft.com/Forums/sqlserver/en-US/ea97e829-aef8-490c-a880-d0be12289bb8/attach-sql-server-2000-database-file-to-sql-server-2014?forum=sqlgetstarted">答案</a>：</p>
+
+<blockquote>
+<p>You cannot directly attach a sql 2000 database on sql 2014. You need to first attach this on a sql 2005 or sql 2008 instance and then take the backup of that database and restore on 2014.</p>
+</blockquote>
+
+<p>破案了&hellip;&hellip;</p>
+
+<p><em>一句话总结：将test.mdf附加(attach)到sql server 2005 or 2008,然后分离(detach)，然后在附加到2017或你的版本</em></p>
+
+<p><strong><em>在以上基础上如果还有错误，参考上述某个<a href="https://blog.csdn.net/qwdafedv/article/details/47036763">链接</a>，修改文件权限。</em></strong></p>
+
+<h3 id="还没完呢">还没完呢？</h3>
+
+<blockquote>
+<p>attach/detach vs backup/restore</p>
+</blockquote>
+
+<p>查资料发现有人用的是前者（attach/detach）,有人用后者(backup/restore),搜了一下两者的优劣，我果然没看懂。</p>
+
+<p><a href="https://dba.stackexchange.com/questions/11177/attach-detach-vs-backup-restore">link_1</a></p>
+
+<p><a href="https://dba.stackexchange.com/questions/11116/sql-server-migration-restore-backup-vs-copy-data-and-log-files">link_2</a></p>
+
+<p><a href="https://stackoverflow.com/questions/610113/sql-server-backup-restore-vs-detach-attach">link_3</a></p>
+
+<p>讨论的是他们两者的优劣，有提到速度啊，安全性什么的，可我统统感受不到(初学者落泪~)！上面两个链接，过段时间在<del>学习</del>吧。</p>
+
+<blockquote>
+<p>至于你要问我为什么安装新版本而不是旧版本？</p>
+</blockquote>
+
+<ul>
+<li><a href="https://www.microsoft.com/en-us/cloud-platform/windows-sql-server-2008">sql server ending support</a></li>
+<li><strong>Dos是个好东西，可你为什么要用Windows呢？</strong></li>
+</ul>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content"><a href="https://blog.aoerz.com" class="theme-link">Aoerz</a></span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-09-26
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/find-the-duplicate-number/">
+            <span class="next-text nav-default">Find the duplicate number</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2019-09-26 17:36:32 \x2b0800 CST',
+        title: 'Sql Server Attach Error',
+        clientID: 'f3f07b861974f7346797',
+        clientSecret: 'a5ddf0e5c4b6fbb3e8889c9e83ddb1267862d823',
+        repo: 'Blog',
+        owner: 'Aoerz',
+        admin: ['Aoerz'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:aoerz@outlook.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/8449612/aoerz" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/aoerz" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/aoerz" class="iconfont icon-github" title="github"></a>
+  <a href="https://blog.aoerz.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author"><a href="https://blog.aoerz.com" class="theme-link">Aoerz</a></span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-138297683-2', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
