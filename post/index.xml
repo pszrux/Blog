@@ -6,10 +6,27 @@
     <description>Recent content in Posts on Aoerz | Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 26 Sep 2019 17:36:32 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 21 Oct 2019 18:51:23 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.aoerz.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DOSBox下调试80x86汇编代码</title>
+      <link>https://blog.aoerz.com/post/compile-assembly-code/</link>
+      <pubDate>Mon, 21 Oct 2019 18:51:23 +0800</pubDate>
+      
+      <guid>https://blog.aoerz.com/post/compile-assembly-code/</guid>
+      <description>&lt;h2 id=&#34;dosbox下调试80x86汇编代码&#34;&gt;DOSBox下调试80x86汇编代码&lt;/h2&gt;
+
+&lt;p&gt;使用DOSBox, masm, etc. 编译80x86汇编语言：&lt;/p&gt;
+
+&lt;h3 id=&#34;一-安装dosbox&#34;&gt;一、安装DOSBox&lt;/h3&gt;
+
+&lt;p&gt;根据自己的操作系统选择对应版本的&lt;a href=&#34;https://www.dosbox.com/download.php?main=1&#34;&gt;DosBox&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;找到dosbox.conf文件在末尾添加：&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Sql Server Attach Error</title>

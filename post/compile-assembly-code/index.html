@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Aoerz | Blog</title>
+  <title>DOSBox下调试80x86汇编代码 - Aoerz | Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,10 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Aoerz" /><meta name="description" content="Aoerz&#39;s blog" /><meta name="keywords" content="Aoerz, Blog" />
+<meta name="author" content="Aoerz" /><meta name="description" content="DOSBox下调试80x86汇编代码 使用DOSBox, masm, etc. 编译80x86汇编语言：
+一、安装DOSBox 根据自己的操作系统选择对应版本的DosBox
+找到dosbox.conf文件在末尾添加：
+" /><meta name="keywords" content="Aoerz, Blog" />
 
 
 
@@ -26,9 +29,7 @@
 <meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
-<link rel="canonical" href="https://blog.aoerz.com/" />
-  <link href="https://blog.aoerz.com/index.xml" rel="alternate" type="application/rss+xml" title="Aoerz | Blog" />
-  <link href="https://blog.aoerz.com/index.xml" rel="feed" type="application/rss+xml" title="Aoerz | Blog" />
+<link rel="canonical" href="https://blog.aoerz.com/post/compile-assembly-code/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,19 +41,51 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Aoerz | Blog" />
-<meta property="og:description" content="Aoerz&#39;s blog" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.aoerz.com/" />
+<meta property="og:title" content="DOSBox下调试80x86汇编代码" />
+<meta property="og:description" content="DOSBox下调试80x86汇编代码
 
-<meta property="og:updated_time" content="2019-10-21T18:51:23&#43;08:00"/>
+使用DOSBox, masm, etc. 编译80x86汇编语言：
 
-<meta itemprop="name" content="Aoerz | Blog">
-<meta itemprop="description" content="Aoerz&#39;s blog">
+一、安装DOSBox
 
+根据自己的操作系统选择对应版本的DosBox
+
+找到dosbox.conf文件在末尾添加：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.aoerz.com/post/compile-assembly-code/" />
+<meta property="article:published_time" content="2019-10-21T18:51:23&#43;08:00"/>
+<meta property="article:modified_time" content="2019-10-21T18:51:23&#43;08:00"/>
+
+<meta itemprop="name" content="DOSBox下调试80x86汇编代码">
+<meta itemprop="description" content="DOSBox下调试80x86汇编代码
+
+使用DOSBox, masm, etc. 编译80x86汇编语言：
+
+一、安装DOSBox
+
+根据自己的操作系统选择对应版本的DosBox
+
+找到dosbox.conf文件在末尾添加：">
+
+
+<meta itemprop="datePublished" content="2019-10-21T18:51:23&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-21T18:51:23&#43;08:00" />
+<meta itemprop="wordCount" content="456">
+
+
+
+<meta itemprop="keywords" content="Assembly language," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Aoerz | Blog"/>
-<meta name="twitter:description" content="Aoerz&#39;s blog"/>
+<meta name="twitter:title" content="DOSBox下调试80x86汇编代码"/>
+<meta name="twitter:description" content="DOSBox下调试80x86汇编代码
+
+使用DOSBox, masm, etc. 编译80x86汇编语言：
+
+一、安装DOSBox
+
+根据自己的操作系统选择对应版本的DosBox
+
+找到dosbox.conf文件在末尾添加："/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -116,20 +149,48 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="posts" class="posts">
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/compile-assembly-code/">DOSBox下调试80x86汇编代码</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-10-21 </span>
-      
-        <span class="more-meta"> 456 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">DOSBox下调试80x86汇编代码</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-10-21 </span>
+        
+          <span class="more-meta"> 456 words </span>
+          <span class="more-meta"> 1 min read </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#dosbox下调试80x86汇编代码">DOSBox下调试80x86汇编代码</a>
+<ul>
+<li><a href="#一-安装dosbox">一、安装DOSBox</a>
+<ul>
+<li><a href="#为什么这么做">为什么这么做？</a></li>
+</ul></li>
+<li><a href="#二-编译-compile-运行-run">二、编译(Compile)运行(Run)</a></li>
+<li><a href="#三-调试-debug">三、调试(Debug)</a>
+<ul>
+<li><a href="#t命令">T命令</a></li>
+<li><a href="#u命令">U命令</a></li>
+<li><a href="#g命令">G命令</a></li>
+<li><a href="#r命令">R命令</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
       <h2 id="dosbox下调试80x86汇编代码">DOSBox下调试80x86汇编代码</h2>
 
 <p>使用DOSBox, masm, etc. 编译80x86汇编语言：</p>
@@ -139,75 +200,116 @@
 <p>根据自己的操作系统选择对应版本的<a href="https://www.dosbox.com/download.php?main=1">DosBox</a></p>
 
 <p>找到dosbox.conf文件在末尾添加：</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/compile-assembly-code/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/sql-server-attach-error/">Sql Server Attach Error</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-09-26 </span>
-      
-        <span class="more-meta"> 1004 words </span>
-        <span class="more-meta"> 3 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <h3 id="问题">问题</h3>
+<p><code>MOUNT C C:\&lt;Your-Directory&gt;</code></p>
 
-<p>学校数据库上机用的sql server 2008, 我自己电脑上安装的是sql server 2017, 然后老师给的 .mdf 文件在机房是可以附加的，在我的电脑上附加不成功, 提示有错误：</p>
+<p><code>C:</code></p>
+
+<p>替换<Your-Directory> 为你自己的文件夹，未来里面存放你写的代码，以及masm.exe, debug.exe, link.exe.</p>
+
+<p>masm.exe, debug.exe, link.exe <a href="https://github.com/Aoerz/HW/tree/master/Assembly-Language/tools">点击下载</a></p>
+
+<h4 id="为什么这么做">为什么这么做？</h4>
 
 <blockquote>
-<p>SQLServer 数据库、附加数据库时出错。有关详细信息，请单击“消息”列中的超链接</p>
+<p><strong>MOUNT.COM</strong> is a command inside DOSBox that can connect physical folders and drives to <a href="https://www.dosbox.com/wiki/Drives">virtual drives</a> inside DOSBox. The mounted drive does not automatically refresh files changed out side of DOSBox. You can refresh these files on all mounted drives by activating the Swap Image event (Hot key: Ctrl F4) to have access to changed files automatically when, for example, the drive is mapped as a floppy. &ndash;<a href="https://www.dosbox.com/wiki/MOUNT">Link</a></p>
 </blockquote>
 
-<p>上网搜索了好久，好多博客讲的都是修改文件权限，然而在我这里依旧行不通，问题依然存在，另外吐槽一下: csdn 同样的<a href="https://blog.csdn.net/qwdafedv/article/details/47036763">文章</a>会出现好多遍，貌似csdn 上的coder 都喜欢copy, paste, copy, paste&hellip;(由于涉及到上古时期的软件，去csdn 碰碰运气, 万一碰到解决方案呢, 然而并没有&hellip;&hellip;)</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/sql-server-attach-error/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
+<h3 id="二-编译-compile-运行-run">二、编译(Compile)运行(Run)</h3>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/find-the-duplicate-number/">Find the duplicate number</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-07-30 </span>
-      
-        <span class="more-meta"> 874 words </span>
-        <span class="more-meta"> 2 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>总结 Leetcode <a href="https://leetcode.com/problems/find-the-duplicate-number/">find-the-duplicate-number</a> 的做法。</p>
+<p>将代码文件放置在<Your-Directory>目录中，假定代码文件名<code>Hello.asm</code></p>
 
-<h2 id="problem">Problem</h2>
+<p>依次执行:</p>
 
-<p>Given an array <em>nums</em> containing <em>n</em> + 1 integers where each integer is between 1 and <em>n</em>(inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/find-the-duplicate-number/" class="read-more-link">Read more..</a>
-    </div>
-  </div>
-</article>
+<p><code>masm Hello.asm</code></p>
 
-    </section>
-  
-  <nav class="pagination">
-    
-    
-  </nav>
-        </div>
+<p>如果没有编译错误，进入下一步，执行：</p>
+
+<p><code>link Hello.obj</code></p>
+
+<p>没有错误进入下一步运行程序，执行：</p>
+
+<p><code>Hello</code></p>
+
+<p>此时，如果程序没有逻辑错误，你应该可以看到目标结果了。</p>
+
+<h3 id="三-调试-debug">三、调试(Debug)</h3>
+
+<p>执行 <code>debug Hello.exe</code>，</p>
+
+<h4 id="t命令">T命令</h4>
+
+<p>执行汇编程序，默认每次执行一条命令，类似单步调试。</p>
+
+<h4 id="u命令">U命令</h4>
+
+<p>反汇编</p>
+
+<h4 id="g命令">G命令</h4>
+
+<p>G[断点地址]，从当前地址执行到断点地址。</p>
+
+<h4 id="r命令">R命令</h4>
+
+<p>查看当前寄存器的值</p>
+
+<p>以上是常用命令，其余命令请查看<a href="https://thestarman.pcministry.com/asm/debug/debug2.htm">Link_1_EN</a>, <a href="https://www.cnblogs.com/mq0036/p/5043038.html">Link_2_CN</a>.</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content"><a href="https://blog.aoerz.com" class="theme-link">Aoerz</a></span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-10-21
         
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/assembly-language/">Assembly language</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/sql-server-attach-error/">
+            <span class="next-text nav-default">Sql Server Attach Error</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2019-10-21 18:51:23 \x2b0800 CST',
+        title: 'DOSBox下调试80x86汇编代码',
+        clientID: 'f3f07b861974f7346797',
+        clientSecret: 'a5ddf0e5c4b6fbb3e8889c9e83ddb1267862d823',
+        repo: 'Blog',
+        owner: 'Aoerz',
+        admin: ['Aoerz'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+  
+  
+
+  
 
       </div>
     </main>
